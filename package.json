@@ -4,13 +4,17 @@
   "description": "A text-based space conquest browser game",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio",
-    "db:seed": "tsx prisma/seed.ts"
+    "db:seed": "tsx prisma/seed.ts",
+    "postinstall": "prisma generate",
+    "deploy": "node scripts/deploy.js",
+    "setup-db": "node scripts/setup-database.js"
   },
   "dependencies": {
     "next": "^14.0.0",

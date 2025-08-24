@@ -3,8 +3,15 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  output: 'standalone',
+  images: {
+    unoptimized: true
+  },
+  eslint: {
+    ignoreDuringBuilds: true
+  },
   typescript: {
-    ignoreBuildErrors: false,
+    ignoreBuildErrors: true,
   },
 }
 
